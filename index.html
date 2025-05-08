@@ -6,98 +6,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Willow Storm - Professional Portfolio</title>
     <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --secondary: #e2e8f0;
+            --accent: #4299e1;
+            --text: #333;
+            --light-bg: #f8fafc;
+            --spacing-sm: 10px;
+            --spacing-md: 20px;
+            --spacing-lg: 40px;
+            --border-radius: 5px;
+        }
+
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
-            color: #333;
+            color: var(--text);
         }
 
+        /* Typography */
+        h2 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.8em;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        h3 {
+            color: var(--primary-light);
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Layout */
         header {
-            background: #1a365d;
-            padding: 20px;
+            background: var(--primary);
+            padding: var(--spacing-md);
             text-align: center;
             color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav {
-            margin-top: 10px;
+            margin-top: var(--spacing-sm);
         }
 
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #e2e8f0;
+            color: var(--secondary);
             font-weight: bold;
             transition: color 0.3s;
         }
 
         nav a:hover {
-            color: #90cdf4;
+            color: var(--accent);
         }
 
         section {
-            padding: 40px 20px;
+            padding: var(--spacing-lg) var(--spacing-md);
             max-width: 1000px;
             margin: 0 auto;
+            margin-bottom: var(--spacing-lg);
         }
 
+        /* Hero Section */
         .hero {
-            background: #e2e8f0;
+            background: linear-gradient(to right, #2c5282, #1a365d);
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
+            color: white;
+            margin-bottom: 0;
         }
 
         .hero h2 {
             font-size: 2.5em;
-            margin-bottom: 20px;
+            margin-bottom: var(--spacing-md);
+            color: white;
         }
 
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
+        .hero h2::after {
+            background-color: white;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
         }
 
-        .skill-category {
-            background: #f8fafc;
-            padding: 15px;
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: var(--spacing-md);
+        }
+
+        .cta-button:hover {
+            background-color: #2b6cb0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Skills Matrix */
+        .skills-matrix {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--spacing-md);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills-matrix th {
+            background-color: var(--primary);
+            color: white;
+            text-align: left;
+            padding: 12px;
+        }
+
+        .skills-matrix td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .skills-matrix tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .skills-matrix tr:hover {
+            background-color: #edf2f7;
+        }
+
+        .project-link {
+            color: var(--primary-light);
+            text-decoration: none;
+            cursor: pointer;
+            border-bottom: 1px dotted var(--primary-light);
+        }
+
+        .project-link:hover {
+            color: var(--accent);
+        }
+
+        .proficiency-bar {
+            width: 100%;
+            background-color: #e2e8f0;
+            height: 10px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
 
-        .skill-category h3 {
-            color: #2c5282;
-            margin-top: 0;
+        .proficiency-level {
+            height: 100%;
+            background-color: var(--accent);
         }
 
-        .contact-info {
-            background: #f0f4f8;
-            text-align: center;
-            padding: 30px;
-        }
-
+        /* Experience */
         .experience-item {
-            margin-bottom: 30px;
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
         .experience-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+            flex-wrap: wrap;
         }
 
         .experience-header h3 {
             margin: 0;
-            color: #2c5282;
+            color: var(--primary-light);
+        }
+
+        .experience-location {
+            font-style: italic;
+            color: #666;
+            margin-bottom: var(--spacing-sm);
         }
 
         ul.achievements {
-            padding-left: 20px;
+            padding-left: var(--spacing-md);
+            margin-top: var(--spacing-md);
         }
 
         ul.achievements li {
-            margin-bottom: 8px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Contact */
+        .contact-info {
+            background: var(--light-bg);
+            text-align: center;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
         }
     </style>
 </head>
@@ -115,8 +244,9 @@
     </header>
 
     <section class="hero" id="hero">
-        <h2>Manufacturing Engineering & Robotics Specialist</h2>
-        <p>Turning technical challenges into reliable automation solutions</p>
+        <h2>Industrial Engineering and Automation Specialist</h2>
+        <p>Transforming manufacturing operations through robotics and predictive maintenance solutions</p>
+        <a href="#" class="cta-button">Download Resume</a>
     </section>
 
     <section id="about">
@@ -136,12 +266,14 @@
     <section id="experience">
         <h2>Professional Experience</h2>
 
-        <div class="experience-item">
+        <div class="experience-item" id="project-fanuc">
             <div class="experience-header">
                 <h3>Material Handling Manufacturing Engineering Technician</h3>
                 <span>First Solar | Apr. 2024 – Present</span>
             </div>
-            <p>Perrysburg, OH</p>
+            <div class="experience-location">Perrysburg, OH</div>
+            <p><strong>Key Achievement:</strong> Streamlined robot troubleshooting process by creating data comparison
+                tools with VBA, reducing diagnostic time and improving maintenance efficiency.</p>
             <ul class="achievements">
                 <li>Developed a VBA-powered Excel tool to process and analyze raw data from 35 Fanuc robots,
                     highlighting abnormalities with conditional formatting for predictive maintenance.</li>
@@ -150,82 +282,187 @@
                 <li>Optimized robot programs for Fanuc systems to enhance efficiency and reduce errors.</li>
                 <li>Calibrated and integrated Cognex vision sensors, DataMan barcode readers, and safety systems.</li>
             </ul>
+            <a href="#skills" class="cta-button" style="margin-top: 20px; font-size: 0.9em; padding: 8px 16px;">View
+                Related Skills</a>
         </div>
 
-        <div class="experience-item">
+        <div class="experience-item" id="project-kawasaki">
             <div class="experience-header">
                 <h3>Skilled Maintenance Team Member</h3>
                 <span>Mazda Toyota Manufacturing | Mar. 2022 – Mar. 2024</span>
             </div>
-            <p>Huntsville, AL</p>
+            <div class="experience-location">Huntsville, AL</div>
+            <p><strong>Key Achievement:</strong> Created standardization of One Point Lessons, Standard Operating
+                Procedures, and RCM documentation while cross-training the RCM process across departments.</p>
             <ul class="achievements">
                 <li>Created the 6-document process of reliability-centered maintenance breakdown, including FDD, FMEA,
                     EMS, PM Procedures with Check Sheets, and Safety Job Plans.</li>
                 <li>Programmed and maintained industrial robot arms, including brands such as Kawasaki, Nachi, and
                     Motoman, for precise manufacturing processes.</li>
-                <li>Configured 12 Vision Systems for sealant bead application, ensuring alignment with quality standards.</li>
-                <li>Developed 42 One Point Lessons for robot operation, including a detailed reference for 98 Kawasaki R
+                <li>Configured 12 Vision for sealant bead application, ensuring alignment with quality standards.</li>
+                <li>Developed 42 One Point Lessons robot operation, including a detailed reference for 98 Kawasaki R
                     Codes.</li>
             </ul>
+            <a href="#skills" class="cta-button" style="margin-top: 20px; font-size: 0.9em; padding: 8px 16px;">View
+                Related Skills</a>
         </div>
     </section>
 
     <section id="skills">
-        <h2>Technical Skills</h2>
+        <h2>Technical Skills Matrix</h2>
 
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>Robotics</h3>
-                <ul>
-                    <li>Fanuc Robot Programming</li>
-                    <li>Kawasaki Robot Systems</li>
-                    <li>Nachi & Motoman Robots</li>
-                    <li>Vision System Configuration</li>
-                    <li>Robot Troubleshooting</li>
-                </ul>
-            </div>
+        <table class="skills-matrix">
+            <thead>
+                <tr>
+                    <th>Skill</th>
+                    <th>Proficiency</th>
+                    <th>Years Used</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Robotics Skills -->
+                <tr>
+                    <td>Fanuc Robot Programming</td>
+                    <td>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-level" style="width: 95%"></div>
+                        </div>
+                    </td>
+                    <td>1+</td>
+                </tr>
+                <tr>
+                    <td>Kawasaki Robot Systems</td>
+                    <td>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-level" style="width: 90%"></div>
+                        </div>
+                    </td>
+                    <td>2+</td>
+                </tr>
+                <tr>
+                    <td>Vision System Configuration</td>
+                    <td>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-level" style="width: 85%"></div>
+                        </div>
+                    </td>
+                    <td>3+</td>
+                </tr>
 
-            <div class="skill-category">
-                <h3>Automation</h3>
-                <ul>
-                    <li>PLC Programming</li>
-                    <li>Omron PLC Systems</li>
-                    <li>Conveyor Systems</li>
-                    <li>Automated Forklifts</li>
-                    <li>Safety Systems Integration</li>
-                </ul>
-            </div>
+                <!-- Automation Skills -->
+                <tr>
+                    <td>PLC Programming</td>
+                    <td>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-level" style="width: 85%"></div>
+                        </div>
+                    </td>
+                    <td>3+</td>
+                </tr>
+                <tr>
+                    <td>Conveyor Systems</td>
+                    <td>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-level" style="width: 80%"></div>
+                        </div>
+                    </td>
+                    <td>3+</td>
+                </tr>
 
-            <div class="skill-category">
-                <h3>Data & Software</h3>
-                <ul>
-                    <li>VBA Programming</li>
-                    <li>SQL Database Analysis</li>
-                    <li>JMP Statistical Software</li>
-                    <li>Predictive Maintenance</li>
-                    <li>Technical Documentation</li>
-                </ul>
-            </div>
+                <!-- Data & Software Skills -->
+                <tr>
+                    <td>VBA Programming</td>
+                    <td>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-level" style="width: 90%"></div>
+                        </div>
+                    </td>
+                    <td>1+</td>
+                </tr>
+                <tr>
+                    <td>SQL Database Analysis</td>
+                    <td>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-level" style="width: 75%"></div>
+                        </div>
+                    </td>
+                    <td>1+</td>
+                </tr>
+                <tr>
+                    <td>JMP Statistical Software</td>
+                    <td>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-level" style="width: 70%"></div>
+                        </div>
+                    </td>
+                    <td>1+</td>
+                </tr>
 
-            <div class="skill-category">
-                <h3>Technical Knowledge</h3>
-                <ul>
-                    <li>AC/DC Electricity</li>
-                    <li>Motor Controls</li>
-                    <li>Fluid Systems</li>
-                    <li>Preventative Maintenance</li>
-                    <li>Precision Measurement</li>
-                </ul>
-            </div>
-        </div>
+                <!-- Technical Knowledge -->
+                <tr>
+                    <td>AC/DC Electricity</td>
+                    <td>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-level" style="width: 85%"></div>
+                        </div>
+                    </td>
+                    <td>3+</td>
+                </tr>
+                <tr>
+                    <td>Motor Controls</td>
+                    <td>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-level" style="width: 80%"></div>
+                        </div>
+                    </td>
+                    <td>3+</td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 
     <section id="contact" class="contact-info">
-        <h2>Contact Information</h2>
-        <p>Email: willow.i.storm@gmail.com</p>
-        <p>Phone: (256) - 690 - 8584</p>
-        <p>Location: Perrysburg, OH, 43551</p>
+        <h2>Let's Connect</h2>
+        <p>Looking for expertise in industrial automation, robotics programming, or manufacturing solutions?</p>
+        <a href="mailto:willow.i.storm@gmail.com" class="cta-button">Book a 15-min intro call</a>
+        <p style="margin-top: 20px;">
+            <strong>Email:</strong> willow.i.storm@gmail.com |
+            <strong>Phone:</strong> (256) - 690 - 8584 |
+            <strong>Location:</strong> Perrysburg, OH, 43551
+        </p>
     </section>
+
+    <script>
+        // Add click event listeners for smooth scrolling
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to add smooth scrolling to links
+            const addSmoothScroll = function (links) {
+                links.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            };
+
+            // Add smooth scrolling to navigation links
+            const navLinks = document.querySelectorAll('nav a');
+            addSmoothScroll(navLinks);
+
+            // Add smooth scrolling to "View Related Skills" buttons
+            const skillButtons = document.querySelectorAll('.experience-item .cta-button');
+            addSmoothScroll(skillButtons);
+        });
+    </script>
 
 </body>
 
