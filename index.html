@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willow Storm - Professional Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: #333;
+        }
+
+        header {
+            background: #1a365d;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #e2e8f0;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #90cdf4;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background: #e2e8f0;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            color: #2c5282;
+            margin-top: 0;
+        }
+
+        .contact-info {
+            background: #f0f4f8;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .experience-header h3 {
+            margin: 0;
+            color: #2c5282;
+        }
+
+        ul.achievements {
+            padding-left: 20px;
+        }
+
+        ul.achievements li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Willow Storm</h1>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Technical Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="hero">
+        <h2>Manufacturing Engineering & Robotics Specialist</h2>
+        <p>Turning technical challenges into reliable automation solutions</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>As a <strong>detail-oriented</strong>, <strong>innovative</strong>, and <strong>problem-solver</strong>
+            manufacturing engineering technician, I specialize in industrial robotics, automated systems, and predictive
+            maintenance solutions. With hands-on experience at First Solar and Mazda Toyota Manufacturing, I excel at
+            programming and optimizing Fanuc, Kawasaki, Nachi, and Motoman robots while implementing data-driven
+            approaches to enhance system reliability and efficiency.</p>
+
+        <p>My technical background includes developing VBA tools for data analysis, implementing reliability-centered
+            maintenance processes, and creating comprehensive documentation for complex systems. I thrive in
+            collaborative environments where I can apply my technical skills to solve real-world manufacturing
+            challenges.</p>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3>Material Handling Manufacturing Engineering Technician</h3>
+                <span>First Solar | Apr. 2024 – Present</span>
+            </div>
+            <p>Perrysburg, OH</p>
+            <ul class="achievements">
+                <li>Developed a VBA-powered Excel tool to process and analyze raw data from 35 Fanuc robots,
+                    highlighting abnormalities with conditional formatting for predictive maintenance.</li>
+                <li>Played a key role in plant startup by coordinating and completing Factory Acceptance Tests (FAT),
+                    Electrical Safety Sign-Offs (ESSO), and Lock Out Tag Out (LOTO) documentation.</li>
+                <li>Optimized robot programs for Fanuc systems to enhance efficiency and reduce errors.</li>
+                <li>Calibrated and integrated Cognex vision sensors, DataMan barcode readers, and safety systems.</li>
+            </ul>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <h3>Skilled Maintenance Team Member</h3>
+                <span>Mazda Toyota Manufacturing | Mar. 2022 – Mar. 2024</span>
+            </div>
+            <p>Huntsville, AL</p>
+            <ul class="achievements">
+                <li>Created the 6-document process of reliability-centered maintenance breakdown, including FDD, FMEA,
+                    EMS, PM Procedures with Check Sheets, and Safety Job Plans.</li>
+                <li>Programmed and maintained industrial robot arms, including brands such as Kawasaki, Nachi, and
+                    Motoman, for precise manufacturing processes.</li>
+                <li>Configured 12 Vision Systems for sealant bead application, ensuring alignment with quality standards.</li>
+                <li>Developed 42 One Point Lessons for robot operation, including a detailed reference for 98 Kawasaki R
+                    Codes.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Robotics</h3>
+                <ul>
+                    <li>Fanuc Robot Programming</li>
+                    <li>Kawasaki Robot Systems</li>
+                    <li>Nachi & Motoman Robots</li>
+                    <li>Vision System Configuration</li>
+                    <li>Robot Troubleshooting</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Automation</h3>
+                <ul>
+                    <li>PLC Programming</li>
+                    <li>Omron PLC Systems</li>
+                    <li>Conveyor Systems</li>
+                    <li>Automated Forklifts</li>
+                    <li>Safety Systems Integration</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Data & Software</h3>
+                <ul>
+                    <li>VBA Programming</li>
+                    <li>SQL Database Analysis</li>
+                    <li>JMP Statistical Software</li>
+                    <li>Predictive Maintenance</li>
+                    <li>Technical Documentation</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Technical Knowledge</h3>
+                <ul>
+                    <li>AC/DC Electricity</li>
+                    <li>Motor Controls</li>
+                    <li>Fluid Systems</li>
+                    <li>Preventative Maintenance</li>
+                    <li>Precision Measurement</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-info">
+        <h2>Contact Information</h2>
+        <p>Email: willow.i.storm@gmail.com</p>
+        <p>Phone: (256) - 690 - 8584</p>
+        <p>Location: Perrysburg, OH, 43551</p>
+    </section>
+
+</body>
+
+</html>
